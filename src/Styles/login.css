@@ -1,0 +1,16 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+}
+
+.login-form {
+   display: flex;
+   flex-direction: column;
+   width: 610px;
+   height: 760px;
+   border: 1px solid #E6E6E8; 
+   border-radius: 5px;
+   box-shadow: 0 0 3px #E6E6E8;
+   position: absolute;
+   top: 90px;
+}
