@@ -1,3 +1,5 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
 .login-container {
     display: flex;
     justify-content: center;
@@ -13,4 +15,18 @@
    box-shadow: 0 0 3px #E6E6E8;
    position: absolute;
    top: 90px;
+}
+
+.logo-div {
+    text-align: center;
+    position: relative;
+    top: 50px;
+}  
+
+.paru-chat-text {
+    font-size: 25px;
+    color: #5D78FC;
+    position: relative;
+    bottom: 10px;
+    right: 3px;
 }
