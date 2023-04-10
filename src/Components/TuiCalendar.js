@@ -5,6 +5,15 @@ import '@toast-ui/calendar/dist/toastui-calendar.min.css';
 const TuiCalendar = () => {
   const calendars = [{ id: 'cal1', name: 'Personal' }];
 
+  /*
+  {
+    title: 
+    category: 
+    start: 
+    end: 
+  }
+  형식으로 json 받고 출력
+   */
   const initialEvents = [
     {
       id: '1',
