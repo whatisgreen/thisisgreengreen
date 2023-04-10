@@ -1,15 +1,17 @@
-import './App.css';
-import TuiCalendar from './Components/TuiCalendar';
-
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { TuiCalendar } from "./Pages/index";
 
 const App = () => {
   return (
-    <div className="App">
-      <div style={{width: '1000px'}}>
-      <TuiCalendar />
-      </div>
+    <div>
+      <BrowserRouter>
+        <Routes>
+            <Route path="/calendar" element={<TuiCalendar />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

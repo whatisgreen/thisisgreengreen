@@ -19,6 +19,7 @@ const TuiCalendar = () => {
   return (
     <div>
         <Calendar
+        width="1000px"
         height="600px"
         view="month"
         week={{
