@@ -1,10 +1,28 @@
 import React from "react";
 import "../Styles/login.css";
 import logo from "../images/로고.png";
-import FloatingLabel from "react-bootstrap/FloatingLabel";
-import Form from "react-bootstrap/Form";
 
 const Login = () => {
+  let loginBox = document.querySelector(".outBox");
+  let loginInputBox = document.querySelector("#sampleId");
+  let email_text = document.querySelector("#email_text")
+
+  const form = () => {
+    loginInputBox.addEventListener("keyup", () => {
+      if (!loginInputBox.value == "") {
+        loginBox.classList.add("existence");
+      } else {
+        loginBox.classList.remove("existence");
+      }
+    });
+
+    loginInputBox.addEventListener("mouseup", () => {
+      if (!loginInputBox.value !== "") {
+        email_text.style.display = "none";
+      }
+    })
+  };
+
   return (
     <div className="login-container">
       <div className="login-form">
@@ -12,16 +30,12 @@ const Login = () => {
           <img src={logo} alt="logo" className="paru-chat-img" />
           <p className="paru-chat-text">Paru Chat</p>
         </div>
-        <FloatingLabel
-          controlId="floatingInput"
-          label="Email address"
-          className="mb-3"
-        >
-          <Form.Control type="email" placeholder="name@example.com" />
-        </FloatingLabel>
-        <FloatingLabel controlId="floatingPassword" label="Password">
-          <Form.Control type="password" placeholder="Password" />
-        </FloatingLabel>
+        <div class="outBox">
+          <div class="inputBox">
+            <input type="text" id="sampleId" name="" />
+            <label for="sampleId" id="email-text">E-mail</label>
+          </div>
+        </div>
       </div>
     </div>
   );

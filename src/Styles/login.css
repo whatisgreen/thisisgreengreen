@@ -6,22 +6,22 @@
 }
 
 .login-form {
-   display: flex;
-   flex-direction: column;
-   width: 610px;
-   height: 760px;
-   border: 1px solid #E6E6E8; 
-   border-radius: 5px;
-   box-shadow: 0 0 3px #E6E6E8;
-   position: absolute;
-   top: 90px;
+    display: flex;
+    flex-direction: column;
+    width: 610px;
+    height: 760px;
+    border: 1px solid #E6E6E8;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #E6E6E8;
+    position: absolute;
+    top: 90px;
 }
 
 .logo-div {
     text-align: center;
     position: relative;
     top: 50px;
-}  
+}
 
 .paru-chat-text {
     font-size: 25px;
@@ -29,4 +29,52 @@
     position: relative;
     bottom: 10px;
     right: 3px;
+}
+
+.outBox {
+    margin-top: 50px;
+    padding: 20px;
+    border: 0;
+    border-radius: 6px;
+}
+
+.outBox .inputBox {
+    position: relative;
+    height: 50px;
+}
+
+.inputBox {
+    text-align: center;
+}
+
+.outBox .inputBox input[type="text"] {
+    padding: 5px 15px;
+    width: 450px;
+    height: 80px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    outline: none;
+}
+
+.outBox .inputBox label {
+    position: absolute;
+    left: 80px;
+    top: 45px;
+    transform: scale(1) translate(4px, -18px);
+    transition: all .15s;
+    pointer-events: none;
+    background:#fff;
+}
+
+.outBox .inputBox input[type="text"]:focus,
+.outBox.existence .inputBox input[type="text"] {
+    border: 2px solid #5D78FC;
+    
+}
+
+.outBox .inputBox input[type="text"]:focus+label,
+.outBox.existence .inputBox label {
+    color: #5D78FC;
+    transform: scale(.85) translate(-10px, -48px);
 }
