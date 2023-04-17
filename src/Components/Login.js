@@ -19,6 +19,8 @@ const Login = () => {
             <input type="password" placeholder="Password" className="pw-input" name="password" />
 
             <input type="submit" value="로그인" className="login-btn" />
+
+            <p className="sign-text">가입하기</p>
         </div>
       </div>
     </div>

@@ -8,13 +8,12 @@
 .login-form {
     display: flex;
     flex-direction: column;
-    width: 610px;
+    width: 540px;
     height: 760px;
-    border: 1px solid #E6E6E8;
     border-radius: 5px;
-    box-shadow: 0 0 3px #E6E6E8;
     position: absolute;
-    top: 90px;
+    top: 80px;
+    border: 1px solid #E6E6E8;
 }
 
 .logo-div {
@@ -41,12 +40,12 @@
 
 .email-input, .pw-input {
     width: 450px;
-    height: 80px;
+    height: 70px;
     font-size: 16px;
-    margin-top: 70px;
+    margin-top: 60px;
     border: 0;
     background: #fff;
-    border: 2px solid #E6E6E8;
+    border: 1px solid #E6E6E8;
     outline: 0;
     padding-left: 10px;
     border-radius: 5px;
@@ -67,6 +66,18 @@
     background: #4285F4;
     border: 0;
     border-radius: 5px;
-    outline: 0;
+    outline: 0; 
     cursor: pointer;
+ }
+
+ .sign-text {
+    position: relative;
+    font-size: 15px;
+    text-align: center;
+    top: 230px;
+    cursor: pointer;
+ }
+
+ .sign-text:hover {
+    color: #4285F4;
  }
