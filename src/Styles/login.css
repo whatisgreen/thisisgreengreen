@@ -31,50 +31,42 @@
     right: 3px;
 }
 
-.outBox {
-    margin-top: 50px;
-    padding: 20px;
-    border: 0;
-    border-radius: 6px;
+.input-div {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+  bottom: 110px; 
 }
 
-.outBox .inputBox {
-    position: relative;
-    height: 50px;
-}
-
-.inputBox {
-    text-align: center;
-}
-
-.outBox .inputBox input[type="text"] {
-    padding: 5px 15px;
+.email-input, .pw-input {
     width: 450px;
     height: 80px;
     font-size: 16px;
-    box-sizing: border-box;
-    border: 1px solid #999;
-    outline: none;
+    margin-top: 70px;
+    border: 0;
+    background: #fff;
+    border: 2px solid #E6E6E8;
+    outline: 0;
+    padding-left: 10px;
+    border-radius: 5px;
 }
 
-.outBox .inputBox label {
-    position: absolute;
-    left: 80px;
-    top: 45px;
-    transform: scale(1) translate(4px, -18px);
-    transition: all .15s;
-    pointer-events: none;
-    background:#fff;
+.email-input:focus, .pw-input:focus {
+    border: 2px solid #4285F4;
 }
 
-.outBox .inputBox input[type="text"]:focus,
-.outBox.existence .inputBox input[type="text"] {
-    border: 2px solid #5D78FC;
-    
-}
-
-.outBox .inputBox input[type="text"]:focus+label,
-.outBox.existence .inputBox label {
-    color: #5D78FC;
-    transform: scale(.85) translate(-10px, -48px);
-}
+ .login-btn {
+    margin: auto;
+    width: 250px;
+    height: 55px;
+    position: relative;
+    top: 120px;
+    font-size: 16px;
+    color: #fff;
+    background: #4285F4;
+    border: 0;
+    border-radius: 5px;
+    outline: 0;
+    cursor: pointer;
+ }
