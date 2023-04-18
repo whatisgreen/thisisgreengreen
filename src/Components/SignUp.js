@@ -4,26 +4,6 @@ import logo from "../images/로고.png";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const SignUp = ({}) => {
-  let email = document.querySelector(".email-input");
-  let nickname = document.querySelector(".name-input");
-  let password = document.querySelector(".pw-input");
-  let passwordCheck = document.querySelector(".pw_Chk-input");
-
-  const validation = () => {
-    if (email.value == "") {
-      alert("이메일을 입력해주세요.");
-      return false;
-    } else if (nickname.value == "") {
-      alert("닉네임을 입력해주세요.");
-      return false;
-    } else if (password.value == "") {
-      alert("비밀번호를 입력해주세요.");
-      return false;
-    } else if (passwordCheck.value == "") {
-      alert("비밀번호 확인을 입력해주세요.");
-      return false;
-    } else return true;
-  };
 
   const [pw, setPw] = useState({
     type: "password",
