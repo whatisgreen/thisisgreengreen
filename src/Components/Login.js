@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Styles/login.css";
 import logo from "../images/로고.png";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-const Login = () => {
-  let loginBox = document.querySelector(".outBox");
-  let loginInputBox = document.querySelector("#sampleId");
-  let email_text = document.querySelector("#email_text")
+const Login = ({}) => {
+  const [pwView, setPwView] = useState({
+    type: "password",
+    visible: false,
+  });
+
+  const handlePwView = e => {
+    setPwView(() => {
+      if (!pwView.visible) {
+        return { type: "text", visible: true };
+      } else {
+        return { type: "password", visible: false };
+      }
+    });
+  };
 
   return (
     <div className="login-container">
@@ -15,12 +27,33 @@ const Login = () => {
           <p className="paru-chat-text">Paru Chat</p>
         </div>
         <div className="input-div">
-            <input type="text" placeholder="E-mail" className="email-input" name="email"/>
-            <input type="password" placeholder="Password" className="pw-input" name="password" />
+          <input
+            type="text"
+            placeholder="E-mail"
+            className="email-input"
+            name="email"
+          />
+          <input
+            type={pwView.type}
+            placeholder="Password"
+            className="pw-input"
+            name="password"
+          />
+          <span onClick={handlePwView}>
+            {pwView.visible ? (
+              <span className="no_visible">
+                <AiOutlineEyeInvisible />
+              </span>
+            ) : (
+              <span className="visible">
+                <AiOutlineEye />
+              </span>
+            )}
+          </span>
 
-            <input type="submit" value="로그인" className="login-btn" />
+          <input type="submit" value="로그인" className="login-btn" />
 
-            <p className="sign-text">가입하기</p>
+          <p className="sign-text">가입하기</p>
         </div>
       </div>
     </div>

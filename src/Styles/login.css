@@ -12,7 +12,7 @@
     height: 760px;
     border-radius: 5px;
     position: absolute;
-    top: 80px;
+    top: 100px;
     border: 1px solid #E6E6E8;
 }
 
@@ -47,7 +47,8 @@
     background: #fff;
     border: 1px solid #E6E6E8;
     outline: 0;
-    padding-left: 10px;
+    padding-left: 1rem;
+    padding-right: 1rem;
     border-radius: 5px;
 }
 
@@ -80,4 +81,14 @@
 
  .sign-text:hover {
     color: #4285F4;
+ }
+
+ .no_visible, .visible {
+    color: #4285F4;
+    position: absolute;
+    cursor: pointer;
+    font-size: 23px;
+    right: 25px;
+    background: 0;
+    bottom: 113px;
  }
