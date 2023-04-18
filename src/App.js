@@ -9,8 +9,8 @@ const App = () => {
         <Routes>
             <Route path="/calendar" element={<TuiCalendar />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/SignUp" element={<SignUp />} />
-            <Route path="/todoChart" element={<TodoChart />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/chart" element={<TodoChart />} />
         </Routes>
       </BrowserRouter>
     </div>
