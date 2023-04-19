@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../Styles/login.css";
 import logo from "../images/로고.png";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Login = ({}) => {
   const [pwView, setPwView] = useState({
@@ -9,7 +10,7 @@ const Login = ({}) => {
     visible: false,
   });
 
-  const handlePwView = e => {
+  const handlePwView = (e) => {
     setPwView(() => {
       if (!pwView.visible) {
         return { type: "text", visible: true };
@@ -53,7 +54,9 @@ const Login = ({}) => {
 
           <input type="submit" value="로그인" className="login-btn" />
 
-          <p className="sign-text">가입하기</p>
+          <Link to="/signup">
+            <p className="sign-text">가입하기</p>
+          </Link>
         </div>
       </div>
     </div>
