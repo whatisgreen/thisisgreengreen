@@ -118,7 +118,15 @@ const SignUp = ({}) => {
             onChange={emailHandler}
           />
           {errors.emailError && (
-            <span className="">이메일 형식에 맞게 입력해주세요.</span>
+            <span
+              className="color-validation"
+              style={{ 
+                fontSize: "13px",
+                position: "relative", 
+                top: "3px" }}
+            >
+              이메일 형식에 맞게 입력해주세요.
+            </span>
           )}
           <input
             type="text"
@@ -127,7 +135,17 @@ const SignUp = ({}) => {
             name="nickname"
             onChange={nickHandler}
           />
-          {errors.nickError && <span className="">닉네임을 입력해주세요.</span>}
+          {errors.nickError && (
+            <span
+              className="color-validation"
+              style={{ 
+                fontSize: "13px", 
+                position: "relative", 
+                top: "3px" }}
+            >
+              닉네임을 입력해주세요.
+            </span>
+          )}
           <input
             type={pw.type}
             placeholder="Password"
@@ -136,7 +154,16 @@ const SignUp = ({}) => {
             onChange={passwordHandler}
           />
           {errors.passwordError && (
-            <span className="">비밀번호를 입력해주세요.</span>
+            <span
+              className="color-validation"
+              style={{
+                fontSize: "13px",
+                position: "relative",
+                top: "3px",
+              }}
+            >
+              비밀번호를 입력해주세요.
+            </span>
           )}
           <span onClick={handlePwView}>
             {pw.visible ? (
@@ -157,7 +184,16 @@ const SignUp = ({}) => {
             onChange={passwordCheckHandler}
           />
           {errors.passwordCheck && (
-            <span className="">비밀번호가 일치한지 확인해주세요.</span>
+            <span
+              className="color-validation"
+              style={{
+                fontSize: "13px",
+                position: "relative",
+                top: "3px",
+              }}
+            >
+              비밀번호가 일치한지 확인해주세요.
+            </span>
           )}
           <span onClick={handlePwChkView}>
             {pwChk.visible ? (
