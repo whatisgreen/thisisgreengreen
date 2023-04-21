@@ -1,0 +1,104 @@
+.chat-room {
+  height: 100vh;
+  width: 20%;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.chat-title {
+  text-align: center;
+  height: 7vh;
+  font-size: 16px;
+  padding-top: 2vh;
+}
+
+.chat-room-list-item {
+  padding: 10px 20px;
+  border: 1px solid #F3F5F7;
+  position: relative;
+}
+
+.chat-room-list-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0 1.5px #ccc;
+  margin-right: 20px;
+}
+
+.chat-room-list-text {
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 5px;
+}
+
+.chat-room-list-title {
+  color: #444;
+}
+
+.chat-room-list-content {
+  color: #ccc;
+}
+
+.chat-bottom {
+  border: 1px solid #F3F5F7;
+  height: 93vh;
+}
+
+.chat-room-new {
+  padding: 20px 20px;
+  text-align: center;
+  color: #1A73E8;
+}
+
+.chat-list {
+  width: 60%;
+  height: 100vh;
+  vertical-align: top;
+  display: inline-block;
+
+}
+
+.fuckYou_bitch {
+  height: 93vh;
+  background-color: #F3F5F7;
+}
+
+.chat-room-list-new {
+  width: 20px;
+  height: 20px;
+  background-color: #fc4949;
+  border-radius: 30px;
+  position: absolute;
+  left: 15px;
+  top: 8px;
+}
+
+.chat-list-history {
+  width: 100%;
+  height: 86vh;
+}
+
+.me, .other {
+  display: block;
+  padding: 10px 20px 0px 20px;
+}
+
+.me {
+  text-align: right;
+}
+
+.me .chatting {
+  background-color: #5D78FC;
+  padding: 10px;
+  border-radius: 5px 5px 0px 5px;
+  display: inline-block;
+  color: #fff;
+}
+
+.other .chatting {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px 5px 0px 5px;
+  display: inline-block;
+}
