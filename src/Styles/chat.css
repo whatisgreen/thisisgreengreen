@@ -91,14 +91,16 @@
 .me .chatting {
   background-color: #5D78FC;
   padding: 10px;
-  border-radius: 5px 5px 0px 5px;
+  /* border-radius: 5px 5px 0px 5px; */
   display: inline-block;
   color: #fff;
+  border-radius: 12px;
 }
 
 .other .chatting {
   background-color: #fff;
   padding: 10px;
-  border-radius: 5px 5px 0px 5px;
+  /* border-radius: 5px 5px 0px 5px; */
   display: inline-block;
+  border-radius: 12px;
 }
