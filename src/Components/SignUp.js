@@ -20,6 +20,14 @@ const SignUp = ({}) => {
     visible: false,
   });
 
+  
+  const [errors, setErrors] = useState({
+    emailError: false,
+    nickError: false,
+    passwordError: false,
+    passwordCheck: false,
+  });
+
   const handlePwView = (e) => {
     setPw(() => {
       if (!pw.visible) {
@@ -39,13 +47,6 @@ const SignUp = ({}) => {
       }
     });
   };
-
-  const [errors, setErrors] = useState({
-    emailError: false,
-    nickError: false,
-    passwordError: false,
-    passwordCheck: false,
-  });
 
   const emailHandler = (e) => {
     if (!email.match("@") && !email.match(".")) {
