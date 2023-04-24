@@ -102,3 +102,34 @@
   border-radius: 5px 5px 0px 5px;
   display: inline-block;
 }
+
+.message-send {
+  height: 7vh;
+  padding: 10px 20px;
+}
+
+.send-area {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.send-area input {
+  height: 100%;
+  width: 90%;
+  font-size: 1rem;
+  border: 0px;
+}
+
+input:focus { outline: none; }
+
+.send-plus {
+  padding: 0% 2%;
+}
+
+.send {
+  padding: 0% 1%;
+  background-color: #5D78FC;
+  border-radius: 50%;
+}

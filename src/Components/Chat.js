@@ -59,6 +59,13 @@ const Chat = () => {
           <div className='chat-list-history'>
             {chattingHistory()}
           </div>
+          <div className='message-send'>
+            <div className='send-area'>
+              <span className='send-plus'>+</span>
+              <input />
+              <span className='send'></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -4,14 +4,14 @@ const FuckYouBitch = (props) => {
   const { who, name, content, last } = props;
   
   const echo = () => {
-    if (who == "me") {
+    if (who === "me") {
       return (
         <div className='me'>
           <div className='chatting'>{content}</div> 
         </div>
       )
     } else {
-      if (last == name) {
+      if (last === name) {
         return (
           <div className='other'>
             <div className='chatting'>{content}</div>
