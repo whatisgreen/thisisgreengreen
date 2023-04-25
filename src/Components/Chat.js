@@ -4,6 +4,7 @@ import logo from "../images/로고.png";
 import '../Styles/chat.css';
 import ChatRoomItem from './ChatRoomItem';
 import FuckYouBitch from './FuckYouBitch';
+import { BsSend } from "react-icons/bs";
 
 const Chat = () => {
   const [chatList, setChatList] = useState([]);
@@ -61,9 +62,9 @@ const Chat = () => {
           </div>
           <div className='message-send'>
             <div className='send-area'>
-              <span className='send-plus'>+</span>
+              <div className='send-plus'>+</div>
               <input />
-              <span className='send'></span>
+              <BsSend className='send' />
             </div>
           </div>
         </div>
