@@ -71,6 +71,7 @@
     right: 25px;
     background: 0;
     top: 340px;
+    z-index: 999;
  }
 
  .no_visible-signUp_chk, .visible-signUp_chk {
@@ -81,6 +82,7 @@
     right: 25px;
     background: 0;
     top: 470px;
+    z-index: 999;
  }
 
  .color-validation {
