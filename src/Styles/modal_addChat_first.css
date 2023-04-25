@@ -80,6 +80,11 @@
     width: 440px;
     height: 345px;
     margin: 5px auto;
+    cursor: pointer;
+}
+
+.file-layout-div:hover {
+    color: #4285F4;
 }
 
 .chat-room-next-btn {
@@ -92,4 +97,11 @@
     color: white;
     margin: 23px auto;
     cursor: pointer
+}
+
+.acceptedImg-text {
+    text-align: center;
+    font-size: 15px;
+    position: relative;
+    top: 160px;
 }

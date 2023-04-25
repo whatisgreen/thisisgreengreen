@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
+import { useDropzone } from "react-dropzone";
 import { AiOutlineClose } from "react-icons/ai";
 import "../Styles/modal_addChat_first.css";
 
 const AddChatModal = () => {
-  const fileTypes = ["JPEG", "PNG", "JPG"];
+  const onDrop = useCallback(acceptedFiles => {
+    if(!acceptedFiles) {
+      alert("사진 추가 실패");
+    } else {
+    console.log(acceptedFiles);
+    alert("사진 추가 완료");
+    }
+  }, []);
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({onDrop}); 
 
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -28,7 +38,11 @@ const AddChatModal = () => {
           />
 
           <span className="chat-room_img-text">채팅방 사진</span>
-          <div className="file-layout-div">
+          <div className="file-layout-div" {...getRootProps()}>
+            <input {...getInputProps()} />
+            {
+              <p className="acceptedImg-text">사진 추가</p>
+            }
           </div>
 
           <button type="submit" className="chat-room-next-btn">
