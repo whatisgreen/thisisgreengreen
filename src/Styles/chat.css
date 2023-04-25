@@ -118,19 +118,25 @@
 }
 
 .send-area input {
-  height: 100%;
-  width: 90%;
+  height: 5vh;
+  width: 92%;
   font-size: 1rem;
-  border: 0px;
+  border: 0;
+  left: 6px;
+  bottom: 5px;
+  position: relative;
+  bottom: 9px;
 }
 
 input:focus { outline: none; }
 
 .send-plus {
   display: inline-block;
-  margin: 15px 0px 0px 20px;
+  position: static;
+  background: 0;
   font-size: 1.4rem;
   cursor: pointer;
+  margin-left: 5px;
 }
 
 .send {
