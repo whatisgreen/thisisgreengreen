@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { TuiCalendar, SignUp, Login, TodoChart, Chat, Modal } from "./Pages/index";
+import { TuiCalendar, SignUp, Login, TodoChart, Chat, Modal, Modal2 } from "./Pages/index";
 
 const App = () => {
   return (
@@ -12,7 +12,8 @@ const App = () => {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/chart" element={<TodoChart />} />
             <Route path="/" element={<Chat />} />
-            <Route path="/modal" element={<Modal />} />
+            <Route path="/modal/1" element={<Modal />} />
+            <Route path="/modal/2" element={<Modal2 />} />
         </Routes>
       </BrowserRouter>
     </div>
