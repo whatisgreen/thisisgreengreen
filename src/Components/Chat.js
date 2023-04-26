@@ -28,9 +28,9 @@ const Chat = () => {
     const data = [{'name':  '임재현', 'content': 'ㅋㅋㅋ'}, {'name':  '박민규', 'content': '우흥'}, {'name':  '박민규', 'content': '딱좋노 이기!'}]
     for (let i = 0; i < data.length; i++) {
       if (data[i]['name'] === '임재현') {
-        result.push(<FuckYouBitch who='me' name={data[i]['name']} last={last} content={data[i]['content']} />);
+        result.push(<FuckYouBitch who='me' key={i} name={data[i]['name']} last={last} content={data[i]['content']} />);
       } else {
-        result.push(<FuckYouBitch who='other' name={data[i]['name']} last={last} content={data[i]['content']} />);
+        result.push(<FuckYouBitch who='other' key={i} name={data[i]['name']} last={last} content={data[i]['content']} />);
       }
       last = data[i]['name'];
     }
