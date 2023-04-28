@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineClose } from "react-icons/ai";
+import { IoMdAddCircleOutline } from "react-icons/io";
 import "../Styles/modal_addChat_second.css";
 
 const AddChatModal2 = ({ name, email }) => {
@@ -19,6 +20,7 @@ const AddChatModal2 = ({ name, email }) => {
         </button>
         <div className='chat-item-div2'>
           <span className='chat-room_user-invite-text'>사용자 초대</span>
+          <span><IoMdAddCircleOutline className='IoMdAddCircleOutline'/></span>
           <input
             type="text"
             placeholder='박민규#0713'
@@ -26,7 +28,11 @@ const AddChatModal2 = ({ name, email }) => {
             className='chat-room_user-invite'  
           />
 
-          <div></div>
+          <div className="chat-room_user-div"></div>
+        
+          <button type="submit" className="chat-room-finish-btn">
+            만들기
+          </button>
         </div>
       </div>
     </div>
