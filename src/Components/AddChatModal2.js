@@ -4,7 +4,7 @@ import { IoMdAddCircleOutline } from "react-icons/io";
 import "../Styles/modal_addChat_second.css";
 
 const AddChatModal2 = (props) => {
-  const { user } = props;
+  const { user, email } = props;
 
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -30,10 +30,6 @@ const AddChatModal2 = (props) => {
             name="chat-room_user-invite"
             className="chat-room_user-invite"
           />
-
-          <div className="chat-room_user-div">
-            <span></span> <span></span>
-          </div>
 
           <button type="submit" className="chat-room-finish-btn">
             만들기
