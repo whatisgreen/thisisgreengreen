@@ -31,6 +31,12 @@ const AddChatModal2 = (props) => {
             className="chat-room_user-invite"
           />
 
+          <div className="chat-room_user-div">
+            <div style={{ display: "block" }}>
+            <span>박민규(mingyu0713@gmail.com)</span>
+            </div>
+          </div>
+
           <button type="submit" className="chat-room-finish-btn">
             만들기
           </button>

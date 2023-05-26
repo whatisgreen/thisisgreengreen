@@ -87,6 +87,13 @@
     margin: 20px auto;
 }
 
+.chat-room_user-div span {
+    position: relative;
+    font-size: 15px;
+    top: 30px;
+    left: 30px;
+}
+
 .chat-room-finish-btn {
     background: #4285F4;
     width: 200px;
