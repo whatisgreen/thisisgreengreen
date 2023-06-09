@@ -33,7 +33,7 @@ const AddChatModal2 = (props) => {
 
           <div className="chat-room_user-div">
             <div style={{ display: "block" }}>
-            <span>박민규(mingyu0713@gmail.com)</span>
+              <span>박민규(mingyu0713@gmail.com)</span>
             </div>
           </div>
 
