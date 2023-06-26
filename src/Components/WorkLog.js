@@ -1,4 +1,5 @@
 import React from 'react';
+import "../Styles/work_log.css"
 
 const WorkLog = () => {
   return (
