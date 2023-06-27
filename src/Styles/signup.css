@@ -1,39 +1,49 @@
 .signUp-container {
-    display: flex;
-    justify-content: center;
+    display: block;
 }
 
 .signUp-form {
-    display: flex;
-    flex-direction: column;
     width: 540px;
     height: 880px;
+    margin: 30px auto;
     border-radius: 5px;
-    position: absolute;
-    top: 40px;
     border: 1px solid #E6E6E8;
 }
 
 .logo-div-sign {
     text-align: center;
-    position: relative;
-    top: 25px;
-}
-
-.paru-chat-text {
-    font-size: 25px;
-    color: #5D78FC;
-    position: relative;
-    bottom: 10px;
-    right: 3px;
+    margin-top: 40px;
 }
 
 .input-div-sign {
     display: flex;
     flex-direction: column;
-    margin: auto;
-    position: relative;
-    bottom: 80px; 
+    align-items: center;
+    justify-content: center;
+}
+
+.paru-chat-text {
+    font-size: 25px;
+    color: #5D78FC;
+    text-align: center;
+}
+
+.email-input_up, .pw-input_up, .name-input_up, .pw_chk-input_up, .code-input_up {
+    width: 450px;
+    height: 70px;
+    font-size: 14px;
+    margin-top: 40px;
+    border: 0;
+    background: #fff;
+    border: 1px solid #E6E6E8;
+    outline: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 5px;
+}
+
+.email-input_up:focus, .pw-input_up:focus, .name-input_up:focus, .pw_chk-input_up:focus, .code-input_up:focus {
+    border: 2px solid #4285F4;
 }
 
 .signUp-btn {
@@ -42,7 +52,7 @@
     height: 55px;
     position: relative;
     top: 60px;
-    font-size: 14px;
+    font-size: 16px;
     color: #fff;
     background: #4285F4;
     border: 0;
@@ -52,39 +62,25 @@
 }
 
 .login-text {
-    position: relative;
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
-    top: 130px;
     cursor: pointer;
+    margin-top: 150px;
  }
 
  .login-text:hover {
     color: #4285F4;
  }
 
- .no_visible-signUp, .visible-signUp {
-    color: #4285F4;
-    position: absolute;
-    cursor: pointer;
-    font-size: 23px;
-    right: 25px;
-    background: 0;
-    top: 340px;
-    z-index: 999;
- }
-
- .no_visible-signUp_chk, .visible-signUp_chk {
-    color: #4285F4;
-    position: absolute;
-    cursor: pointer;
-    font-size: 23px;
-    right: 25px;
-    background: 0;
-    top: 470px;
-    z-index: 999;
- }
-
  .color-validation {
     color: #E74646;
  }
+
+@media (max-width: 425px) {
+    .signUp-form {
+        border: 0;
+        margin-top: 150px;
+    }
+
+    
+}

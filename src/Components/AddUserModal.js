@@ -1,27 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { IoMdAddCircleOutline } from "react-icons/io";
-import "../Styles/modal_addChat_second.css";
+import "../Styles/modal.css";
 
-const AddChatModal2 = (props) => {
-  const { user, email } = props;
-
-  const [modalOpen, setModalOpen] = useState(false);
-
+const AddUserModal = ({ setModalOpen }, props) => {
   const ChatToClose = () => {
     setModalOpen(false);
   };
 
   return (
-    <div className="AddChatModal2" onClick={ChatToClose}>
+    <div className="AddUserModal-container" onClick={ChatToClose}>
       <div className="modal-body2" onClick={(e) => e.stopPropagation()}>
-        <p className="addChat-text2">채팅방 만들기</p>
+        <p className="addUser-text">유저 초대하기</p>
         <button type="submit">
-          <AiOutlineClose className="closeBtn2" onClick={ChatToClose} />
+          <AiOutlineClose className="closeBtn" onClick={ChatToClose} />
         </button>
-        <div className="chat-item-div2">
-          <span className="chat-room_user-invite-text">사용자 초대</span>
-          <span>
+        {props.children}
+        <div className="user-item-div">
+        <span className="chat-room_user-invite-text">사용자 초대</span>
+          <span className="plus-icon">
             <IoMdAddCircleOutline className="IoMdAddCircleOutline" />
           </span>
           <input
@@ -37,7 +34,7 @@ const AddChatModal2 = (props) => {
             </div>
           </div>
 
-          <button type="submit" className="chat-room-finish-btn">
+          <button type="submit" className="user-room-finish-btn">
             만들기
           </button>
         </div>
@@ -46,4 +43,4 @@ const AddChatModal2 = (props) => {
   );
 };
 
-export default AddChatModal2;
+export default AddUserModal;

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const SignUp = ({}) => {
   const [email, setEmail] = useState("");
+  const [code, setCode] = useState("");
   const [nick, setNick] = useState("");
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
@@ -20,33 +21,13 @@ const SignUp = ({}) => {
     visible: false,
   });
 
-  
   const [errors, setErrors] = useState({
     emailError: false,
+    codeError: false,
     nickError: false,
     passwordError: false,
     passwordCheck: false,
   });
-
-  const handlePwView = (e) => {
-    setPw(() => {
-      if (!pw.visible) {
-        return { type: "text", visible: true };
-      } else {
-        return { type: "password", visible: false };
-      }
-    });
-  };
-
-  const handlePwChkView = (e) => {
-    setPwChk(() => {
-      if (!pwChk.visible) {
-        return { type: "text", visible: true };
-      } else {
-        return { type: "password", visible: false };
-      }
-    });
-  };
 
   const emailHandler = (e) => {
     if (!email.match("@") && !email.match(".")) {
@@ -59,6 +40,20 @@ const SignUp = ({}) => {
       });
     }
     setEmail(e.target.value);
+  };
+
+  const codeHandler = (e) => {
+    if (code === "") {
+      setErrors({
+        ...errors,
+        codeError: true,
+      });
+    } else if (code !== "") {
+      setErrors({
+        codeError: false,
+      });
+    }
+    setCode(e.target.value);
   };
 
   const nickHandler = (e) => {
@@ -107,115 +102,112 @@ const SignUp = ({}) => {
     <div className="signUp-container">
       <div className="signUp-form">
         <div className="logo-div-sign">
-          <img src={logo} alt="logo" className="paru-chat-img" />
           <p className="paru-chat-text">Paru Chat</p>
         </div>
-        <div className="input-div-sign">
-          <input
-            type="text"
-            placeholder="E-mail (ex: mingyu1234@gmail.com)"
-            className="email-input"
-            name="email"
-            onChange={emailHandler}
-          />
-          {errors.emailError && (
-            <span
-              className="color-validation"
-              style={{ 
-                fontSize: "13px",
-                position: "relative", 
-                top: "3px" }}
-            >
-              이메일 형식에 맞게 입력해주세요.
-            </span>
-          )}
-          <input
-            type="text"
-            placeholder="Nickname"
-            className="name-input"
-            name="nickname"
-            onChange={nickHandler}
-          />
-          {errors.nickError && (
-            <span
-              className="color-validation"
-              style={{ 
-                fontSize: "13px", 
-                position: "relative", 
-                top: "3px" }}
-            >
-              닉네임을 입력해주세요.
-            </span>
-          )}
-          <input
-            type={pw.type}
-            placeholder="Password"
-            className="pw-input"
-            name="password"
-            onChange={passwordHandler}
-          />
-          {errors.passwordError && (
-            <span
-              className="color-validation"
-              style={{
-                fontSize: "13px",
-                position: "relative",
-                top: "3px",
-              }}
-            >
-              비밀번호를 입력해주세요.
-            </span>
-          )}
-          <span onClick={handlePwView}>
-            {pw.visible ? (
-              <span className="no_visible-signUp">
-                <AiOutlineEyeInvisible />
-              </span>
-            ) : (
-              <span className="visible-signUp">
-                <AiOutlineEye />
+          <div className="input-div-sign">
+            <input
+              type="text"
+              placeholder="E-mail (ex: mingyu1234@gmail.com)"
+              className="email-input_up"
+              name="email"
+              onChange={emailHandler}
+            />
+            {errors.emailError && (
+              <span
+                className="color-validation"
+                style={{
+                  fontSize: "13px",
+                  position: "relative",
+                  top: "3px",
+                }}
+              >
+                이메일 형식에 맞게 입력해주세요.
               </span>
             )}
-          </span>
-          <input
-            type={pwChk.type}
-            placeholder="Password Check"
-            className="pw_chk-input"
-            name="password"
-            onChange={passwordCheckHandler}
-          />
-          {errors.passwordCheck && (
-            <span
-              className="color-validation"
-              style={{
-                fontSize: "13px",
-                position: "relative",
-                top: "3px",
-              }}
-            >
-              비밀번호가 일치한지 확인해주세요.
-            </span>
-          )}
-          <span onClick={handlePwChkView}>
-            {pwChk.visible ? (
-              <span className="no_visible-signUp_chk">
-                <AiOutlineEyeInvisible />
-              </span>
-            ) : (
-              <span className="visible-signUp_chk">
-                <AiOutlineEye />
+            <input
+              type="text"
+              placeholder="code ex)0713"
+              className="code-input_up"
+              name="code"
+              onChange={codeHandler}
+            />
+            {errors.codeError && (
+              <span
+                className="color-validation"
+                style={{
+                  fontSize: "13px",
+                  position: "relative",
+                  top: "3px",
+                }}
+              >
+                코드 형식에 맞게 입력해주세요.
               </span>
             )}
-          </span>
+            <input
+              type="text"
+              placeholder="Nickname"
+              className="name-input_up"
+              name="nickname"
+              onChange={nickHandler}
+            />
+            {errors.nickError && (
+              <span
+                className="color-validation"
+                style={{
+                  fontSize: "13px",
+                  position: "relative",
+                  top: "3px",
+                }}
+              >
+                닉네임을 입력해주세요.
+              </span>
+            )}
+            <input
+              type={pw.type}
+              placeholder="Password"
+              className="pw-input_up"
+              name="password"
+              onChange={passwordHandler}
+            />
+            {errors.passwordError && (
+              <span
+                className="color-validation"
+                style={{
+                  fontSize: "13px",
+                  position: "relative",
+                  top: "3px",
+                }}
+              >
+                비밀번호를 입력해주세요.
+              </span>
+            )}
+            <input
+              type={pwChk.type}
+              placeholder="Password Check"
+              className="pw_chk-input_up"
+              name="password"
+              onChange={passwordCheckHandler}
+            />
+            {errors.passwordCheck && (
+              <span
+                className="color-validation"
+                style={{
+                  fontSize: "13px",
+                  position: "relative",
+                  top: "3px",
+                }}
+              >
+                비밀번호가 일치한지 확인해주세요.
+              </span>
+            )}
+            <input type="submit" value="가입하기" className="signUp-btn" />
 
-          <input type="submit" value="가입하기" className="signUp-btn" />
-
-          <Link to="/login">
-            <p className="login-text">로그인하기</p>
-          </Link>
+            <Link to="/login">
+              <p className="login-text">로그인하기</p>
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
   );
 };
 
