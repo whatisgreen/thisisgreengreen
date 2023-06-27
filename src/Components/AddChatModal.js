@@ -12,7 +12,7 @@ const AddChatModal = ({setModalOpen}, props) => {
   return (
     <div className="AddChatModal-container" onClick={ChatToClose}>
       <div className="modal-body" onClick={(e) => e.stopPropagation()}>
-        <p className="addChat-text">채팅방 만들기</p>
+        <span className="addChat-text">채팅방 만들기</span>
         <button type="submit">
           <AiOutlineClose className="closeBtn" onClick={ChatToClose} />
         </button>

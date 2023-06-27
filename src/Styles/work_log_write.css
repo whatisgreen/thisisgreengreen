@@ -1,0 +1,86 @@
+.workLogWrite-container {
+    display: block;
+    margin-top: 140px;
+}
+
+.workLogWrite-user {
+    width: 500px;
+    height: 60px;
+    border: 1px solid #E6E6E8;
+    border-radius: 5px;
+    margin-left: 50px;
+    padding-top: 16px;
+    padding-left: 15px;
+}
+
+.workLogWrite-user-text {
+    font-size: 16px;
+}
+
+.workLogWrite-email-text {
+    font-size: 16px;
+    color: #DADCE0;
+    margin-left: 2px;
+}
+
+.workLogWrite-wr {
+    width: 500px;
+    height: 580px;
+    border: 1px solid #E6E6E8;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.workLog-text {
+    font-size: 16px;
+    position: relative;
+    top: 25px;
+    left: 25px;
+}
+
+.workLog-inputs {
+    display: block;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.workLogWrite-title, .workLogWrite-day, .workLogWrite-input {
+    width: 450px;
+    height: 70px;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    padding-left: 15px;
+    background: #F3F5F7;
+}
+
+.workLogWrite-title:focus, .workLogWrite-day:focus, .workLogWrite-input:focus {
+    border: 2px solid #4285F4;
+}
+
+.workLogWrite-title {
+    margin-top: 30px;
+}
+
+.workLogWrite-day {
+    margin-top: 50px;
+}
+
+.workLogWrite-input {
+    margin-top: 50px;
+}
+
+.workLogWrite-btn {
+    width: 350px;
+    height: 50px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    background: #4285F4;
+    margin-top: 60px;
+    color: #fff;
+}
+

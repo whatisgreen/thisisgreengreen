@@ -11,7 +11,7 @@ const AddUserModal = ({ setModalOpen }, props) => {
   return (
     <div className="AddUserModal-container" onClick={ChatToClose}>
       <div className="modal-body2" onClick={(e) => e.stopPropagation()}>
-        <p className="addUser-text">유저 초대하기</p>
+        <span className="addUser-text">유저 초대하기</span>
         <button type="submit">
           <AiOutlineClose className="closeBtn" onClick={ChatToClose} />
         </button>
