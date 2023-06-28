@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 import { BsPersonWorkspace } from "react-icons/bs"
 import '../Styles/chat.css';
@@ -7,18 +7,39 @@ import ChatUserItem from './ChatUserItem';
 import FuckYouBitch from './FuckYouBitch';
 import { ChatSendForm } from './ChatSendForm';
 import AddChatModal from './AddChatModal';
+import io from'socket.io-client';
+import cookie from 'react-cookies';
+import { useParams } from 'react-router-dom/dist';
+
+const socket = io('http://localhost:8000',{
+  cors: { origin: '*' }
+});
 
 const Chat = () => {
 
+  const {room} = useParams();
+
   const [modalOpen, setModalOpen] = useState(false);
 
+  const [data, setData] = useState([{'name':  'junhwan', 'content': 'ㅋㅋㅋ'}, {'name':  '박민규', 'content': '우흥'}, {'name':  '박민규', 'content': '딱좋노 이기!'}]);
+
   const chattingHistory = () => {
+
+    const expires = new Date()
+    expires.setMinutes(expires.getMinutes() + 60)
+    cookie.save('id', "1", {
+      path : '/',
+      expires,
+    });
+    cookie.save('username', "junhwan", {
+      path : '/',
+      expires,
+    });
     
     const result = [];
     let last = '';
-    const data = [{'name':  '임재현', 'content': 'ㅋㅋㅋ'}, {'name':  '박민규', 'content': '우흥'}, {'name':  '박민규', 'content': '딱좋노 이기!'}]
     for (let i = 0; i < data.length; i++) {
-      if (data[i]['name'] === '임재현') {
+      if (data[i]['name'] === cookie.load('username')) {
         result.push(<FuckYouBitch who='me' key={i} name={data[i]['name']} last={last} content={data[i]['content']} />);
       } else {
         result.push(<FuckYouBitch who='other' key={i} name={data[i]['name']} last={last} content={data[i]['content']} />);
@@ -32,8 +53,15 @@ const Chat = () => {
     setModalOpen(true);
   };
 
+  socket.on('chat', (msg) => {
+    if (msg.room === room) {
+      setData([...data, {'name': msg.username, 'content': msg.content}]);
+    }
+  })
+
   return (
     <div>
+      <button className='chat-btn' >button</button>
       <div className='chat-room'>
         <div className='chat-title'>
           채팅방
@@ -56,11 +84,11 @@ const Chat = () => {
           <div className='chat-list-history'>
             {chattingHistory()}
           </div>
-          <ChatSendForm />
+          <ChatSendForm socket={socket} room={room == undefined ? 0 : room} />
         </div>
       </div>
     </div>
   )
 }
 
-export default Chat
+export default Chat;

@@ -10,6 +10,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/" element={<Chat />} />
+            <Route path="/:room" element={<Chat />} />
             <Route path="/chat_modal" element={<Modal />} />
             <Route path="/user_modal" element={<Modal2 />} />
             <Route path="/work_log" element={<WorkLog />} />
