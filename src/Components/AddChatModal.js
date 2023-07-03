@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import axios from "axios";
 import { AiOutlineClose } from "react-icons/ai";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import "../Styles/modal.css";
@@ -7,6 +8,23 @@ const AddChatModal = ({setModalOpen}, props) => {
 
   const ChatToClose = () => {
     setModalOpen(false);
+  };
+
+  const [roomName, setRoomName] = useState('');
+
+  const roomNameChange = (e) => {
+    setRoomName(e.target.value);
+  }
+
+  const handleCreateRoomName = async () => {
+    try {
+      const res = await axios.post('http://localhost/api/reportdata_api.php', {
+        name: roomName,
+      });
+      console.log(res.data);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
@@ -24,9 +42,11 @@ const AddChatModal = ({setModalOpen}, props) => {
             placeholder="채팅방 이름을 입력하세요"
             name="chat_room_name"
             className="chat-room_name"
+            value={roomName}
+            onChange={roomNameChange}
           />
           
-          <button type="submit" className="chat-room-finish-btn">
+          <button type="submit" className="chat-room-finish-btn" onClick={handleCreateRoomName}>
             만들기
           </button>
         </div>

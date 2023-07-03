@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { BsPersonWorkspace } from "react-icons/bs";
 import "../Styles/chat.css";
@@ -50,6 +51,21 @@ const Chat = () => {
   const showModal = () => {
     setModalOpen(true);
   };
+
+  const [data, setData] = useState([]);
+
+  useEffect = () => {
+    ChatRoom();
+  }
+
+  const ChatRoom = async () => {
+    try {
+      const res = await axios.post('http://localhost/api/chattingRoomData_api.php');
+      setData(res.data);
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   return (
     <div>

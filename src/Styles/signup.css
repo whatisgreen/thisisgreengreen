@@ -62,10 +62,10 @@
 }
 
 .login-text {
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     cursor: pointer;
-    margin-top: 150px;
+    margin-top: 130px;
  }
 
  .login-text:hover {
@@ -74,6 +74,9 @@
 
  .color-validation {
     color: #E74646;
+    position: absolute;
+    right: 130px;
+    top: 10px;
  }
 
 @media (max-width: 425px) {
