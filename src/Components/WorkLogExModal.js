@@ -8,6 +8,23 @@ const WorkLogExModal = ({ setModalOpen }, props) => {
     setModalOpen(false);
   };
 
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+
+  useEffect(() => {
+    fetchWorkLogModal();
+  }, []);
+
+  const fetchWorkLogModal = async () => {
+    try {
+      const res = await axios.post("http://localhost/api/reportdata_api.php");
+      setTitle(res.data);
+      setContent(res.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <div className="WorkLogExModal-container" onCLick={ExToClose}>
       <div className="modal-body3" onClick={(e) => e.stopPropagation()}>
@@ -16,8 +33,12 @@ const WorkLogExModal = ({ setModalOpen }, props) => {
         </button>
         {props.children}
         <div className="work_log_ex-item-div">
-          <div className="ex-detail-modal">버그 수정 사항</div>
-          <div className="ex-in-modal">버그 수정은 먹는겁니다.</div>
+        {title.map((user) => (
+          <div className="ex-detail-modal" key={user.id}>{user.title}</div>
+        ))}
+        {content.map((user) => (
+          <div className="ex-in-modal" key={user.id}>{user.content}</div>
+        ))}
           <button type="submit" className="delete-btn">일지 삭제</button>
         </div>
       </div>

@@ -7,6 +7,7 @@ import ChatUserItem from './ChatUserItem';
 import FuckYouBitch from './FuckYouBitch';
 import { ChatSendForm } from './ChatSendForm';
 import AddChatModal from './AddChatModal';
+import AddUserModal from "./AddUserModal";
 import io from'socket.io-client';
 import cookie from 'react-cookies';
 import { useParams } from 'react-router-dom/dist';
@@ -14,14 +15,14 @@ import { useParams } from 'react-router-dom/dist';
 const socket = io('http://localhost:8000',{
   cors: { origin: '*' }
 });
-
+  
 const Chat = () => {
 
   const {room} = useParams();
 
   const [modalOpen, setModalOpen] = useState(false);
 
-  const [data, setData] = useState([{'name':  'junhwan', 'content': 'ㅋㅋㅋ'}, {'name':  '박민규', 'content': '우흥'}, {'name':  '박민규', 'content': '딱좋노 이기!'}]);
+  const [data, setData] = useState([{'name':  'junhwan', 'content': 'ㅋㅋㅋ'}, {'name':  '박민규', 'content': 'fd'}, {'name':  '박민규', 'content': 'dfd'}]);
 
   const chattingHistory = () => {
 
@@ -69,29 +70,22 @@ const Chat = () => {
 
   return (
     <div>
-      <button className='chat-btn' >button</button>
-      <div className='chat-room'>
-        <div className='chat-title'>
-          채팅방
-        </div>
-        <div className='chat-bottom'>
-          <div className='chat-room-list'>
-          <ChatRoomItem title='개발자 잡담방' content='(사진)' n='1' />
-            <div className='chat-room-new' onClick={showModal}>
+      <div className="chat-room">
+        <div className="chat-title">채팅방</div>
+        <div className="chat-bottom">
+          <div className="chat-room-list">
+            <ChatRoomItem title="개발자 잡담방" content="(사진)" n="1" />
+            <div className="chat-room-new" onClick={showModal}>
               새로운 채팅방 만들기
             </div>
             {modalOpen && <AddChatModal setModalOpen={setModalOpen} />}
           </div>
         </div>
       </div>
-      <div className='chat-list'>
-        <div className='chat-title'>
-          개발자 잡담방
-        </div>
-        <div className='fuckYou_bitch'>
-          <div className='chat-list-history'>
-            {chattingHistory()}
-          </div>
+      <div className="chat-list">
+        <div className="chat-title">개발자 잡담방</div>
+        <div className="fuckYou_bitch">
+          <div className="chat-list-history">{chattingHistory()}</div>
           <ChatSendForm socket={socket} room={room == undefined ? 0 : room} />
         </div>
       </div>
@@ -115,6 +109,7 @@ const Chat = () => {
           </div>
         </div>
     </div>
+
   );
 };
 

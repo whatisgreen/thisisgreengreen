@@ -18,8 +18,10 @@ const AddChatModal = ({setModalOpen}, props) => {
 
   const handleCreateRoomName = async () => {
     try {
-      const res = await axios.post('http://localhost/api/reportdata_api.php', {
-        name: roomName,
+      const res = await axios.get('http://localhost/api/reportdata_api.php', {
+        params: {
+          name: roomName,
+        },
       });
       console.log(res.data);
     } catch (err) {
