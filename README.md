@@ -64,6 +64,6 @@
 <img src="https://img.shields.io/badge/XD-FF61F6?style=flat-square&logo=Adobe XD&logoColor=white"/></img>
 </p>
 <p>백엔드 -
-<img src="https://img.shields.io/badge/Php-000000?style=flat-square&logo=Php&logoColor=white"/></img>
+<img src="https://img.shields.io/badge/Php-000000?style=flat-square&logo=PHP&logoColor=white"/></img>
 </p>
 
