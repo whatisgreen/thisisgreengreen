@@ -39,7 +39,7 @@
 
 <p>임재현 <br />
 - 팀장 & 백엔드 & 프론트엔드 <br />
-- (이메일 추가) <br />
+- reproduce0529@gmail.com <br />
 - <a href="https://github.com/reproduce0529">github : reproduce0529</a>
 </p>
 
@@ -51,7 +51,19 @@
 
 <p>이준환 <br />
 - 팀원 & 백엔드 & 프론트엔드 <br />
-- (이메일 추가) <br />
+- wnsghks1026@naver.com <br />
 - <a href="https://github.com/Shell-by">github : Shell-by</a>
+</p>
+
+## 사용 기술
+### 개발에 사용한 기술
+<p>
+프론트엔드 - 
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/></img>
+<img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=CSS3&logoColor=white"/></img>
+<img src="https://img.shields.io/badge/XD-FF61F6?style=flat-square&logo=Adobe XD&logoColor=white"/></img>
+</p>
+<p>백엔드 -
+<img src="https://img.shields.io/badge/Php-000000?style=flat-square&logo=Php&logoColor=white"/></img>
 </p>
 
